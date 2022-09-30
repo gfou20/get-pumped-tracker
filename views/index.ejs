@@ -2,15 +2,9 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>Time to Get PUMPED! Let's begin <%= user ? user.profile.name : "!" %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
-  <% } %>
+  <h1>Let's Get PUMPED!</h1>
+  <h2>Why Get Pumped!</h2>
+  <p>Whenever I would feel lost or exhausted with the cards life has been dealing me, I found exercise to be my escape. Being able to put all of your emotions into a solid workout has always left me feeling relaxed, more energized and most importantly, accomplished! Seeing how much more you can do everyday pushes me to go further and maybe this can help you go beyond your limits too!</p>
 </main>
 
 <%- include('./partials/footer') %>
