@@ -28,7 +28,24 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  Workout.findById(req.params.id)
+  .populate('client')
+  .then(workout => {
+    console.log(workout);
+    res.render('workouts/show', {
+      workout,
+      title: "Workout show"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/workouts')
+  })
+}
+
 export {
   index,
-  create
+  create,
+  show
 }
