@@ -24,7 +24,7 @@
     <% workouts.forEach(workout => { %>
       <li>
         💪 
-        <a href="/workouts/<%= workout.name %>"><%= workout.name %></a>
+        <a href="/workouts/<%= workout._id %>"><%= workout.name %></a>
         got you <%= workout.pump ? 'pumped' : 'not pumped' %></li>
     <% }) %>
   </ul>
