@@ -3,7 +3,22 @@
 
 <main>
   <h1>Feel the 🔥</h1>
-  <h3><a href="/workouts/new">Add your Workout!</a></h3>
-
+  <h3>Check out everyone's workout! </h3>
+  <% if (user) { %>
+    <h2>Add new Workout!</h2>
+    <form action="/workouts" method="POST">
+    <label for="name-select">Name</label>
+    <select name="name" id="name-select">
+      <option value="Squats">Squats</option>
+      <option value="Bicep Curls">Bicep Curls</option>
+      <option value="Tricep Extensions">Tricep Extensions</option>
+      <option value="Deadlifts">Deadlifts</option>
+      <option value="Flat Bench Press">Flat Bench Press</option>
+    </select>  
+    <label for="pump-checkbox">Got Pumped?</label>
+    <input type="checkbox" name="pump">
+    <button type="submit">Add your Workout!</button>
+  </form>
+  <% } %>
 </main>
 <%- include('../partials/footer') %>
