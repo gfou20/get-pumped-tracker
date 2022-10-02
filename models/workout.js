@@ -4,8 +4,8 @@ const Schema = mongoose.Schema
 
 const workoutSchema = new Schema({
   name: String,
-  date: Date,
-  pump: Boolean
+  pump: Boolean,
+  client: { type: Schema.Types.ObjectId, ref: 'Profile'}
 }, {
   timestamps: true
 })

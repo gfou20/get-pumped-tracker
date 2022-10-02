@@ -3,9 +3,8 @@
 
 <main>
   <h1>Feel the 🔥</h1>
-  <h3>Check out everyone's workout! </h3>
   <% if (user) { %>
-    <h2>Add new Workout!</h2>
+    <h2>Add New Workout!</h2>
     <form action="/workouts" method="POST">
     <label for="name-select">Name</label>
     <select name="name" id="name-select">
@@ -15,10 +14,19 @@
       <option value="Deadlifts">Deadlifts</option>
       <option value="Flat Bench Press">Flat Bench Press</option>
     </select>  
-    <label for="pump-checkbox">Got Pumped?</label>
+    <label for="pump-checkbox">Pumped?</label>
     <input type="checkbox" name="pump">
     <button type="submit">Add your Workout!</button>
   </form>
   <% } %>
+  <h3>Check out everyone's workout! </h3>
+  <ul>
+    <% workouts.forEach(workout => { %>
+      <li>
+        💪 
+        <a href="/workouts/<%= workout.name %>"><%= workout.name %></a>
+        got you <%= workout.pump ? 'pumped' : 'not pumped' %></li>
+    <% }) %>
+  </ul>
 </main>
 <%- include('../partials/footer') %>
