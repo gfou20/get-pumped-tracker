@@ -1,5 +1,11 @@
 import { Workout } from '../models/workout.js'
 
+function newWorkout(req, res) {
+  res.render('workouts/new', {
+    title: 'Add your Workout!'
+  })
+}
+
 function index(req, res) {
   Workout.find({})
   .then(workouts => {
@@ -15,4 +21,5 @@ function index(req, res) {
 }
 export {
   index,
+  newWorkout as new,
 }
