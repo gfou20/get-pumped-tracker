@@ -19,8 +19,10 @@ function create(req, res) {
   req.body.pump = !!req.body.pump
   console.log(req.body)
   Workout.create(req.body)
-  .then(workout => {
-    res.redirect('/workouts')
+  .then(workouts => {
+    res.redirect('/workouts', {
+      workouts
+    })
   })
   .catch(err => {
     console.log(err)
