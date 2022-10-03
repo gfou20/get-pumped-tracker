@@ -46,8 +46,24 @@ function show(req, res) {
   })
 }
 
+function flipPump(req, res) {
+  Workout.findById(req.params.id)
+  .then(workout => {
+    workout.pump = !workout.pump
+    workout.save()
+    .then(() => {
+      res.redirect(`/workouts/${req.params.id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/workouts')
+  })
+}
+
 export {
   index,
   create,
-  show
+  show,
+  flipPump
 }

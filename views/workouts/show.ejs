@@ -5,7 +5,9 @@
   <h2>From the personal gym tracker of <%= workout.client ? workout.client.name : "😱"%></h2>
   <div><%= workout.name %></div>
   <div><%= workout.date %></div>
-  
+  <% if (user) { %>
+    
+  <% } %> 
   <form
     id="add-sets-reps-form"
     action="/workouts/<%= workout._id %>/sets"
