@@ -40,3 +40,14 @@ main {
 .right {
   margin-left: auto;
 }
+
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+a:hover {
+  color: white;
+  background-color: blue;
+  border-radius: 5px;
+}
