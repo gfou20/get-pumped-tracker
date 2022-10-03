@@ -13,7 +13,7 @@ router.get('/:id/edit', isLoggedIn, workoutsCtrl.edit)
 
 router.post('/', workoutsCtrl.create)
 
-router.patch('/:id/flip-pump', isLoggedIn, workoutsCtrl.flipPump)
+router.put('/:id', isLoggedIn, workoutsCtrl.update)
 
 
 export {

@@ -5,6 +5,13 @@
   <h2>Personal gym tracker of <%= workout.client ? workout.client.name : "😱"%></h2>
   <div><%= workout.name %></div>
   <div><%= workout.date %></div>
+  <label for="sets">Sets:
+    <input type="text" name="sets">
+  </label>
+  <label for="reps">Reps:
+    <input type="text" name="reps">
+  </label>
+</form>
   <% if (workout.client.equals(user?.profile._id)) { %>
     <a href="/workouts/<%= workout._id %>/edit">
       <button class="btn">Edit this Workout! 🏗💪</button>

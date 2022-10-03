@@ -60,25 +60,28 @@ function edit(req, res) {
   })
 }
 
-function flipPump(req, res) {
+function update(req, res) {
   Workout.findById(req.params.id)
   .then(workout => {
-    workout.pump = !workout.pump
-    workout.save()
-    .then(() => {
-      res.redirect(`/workouts/${req.params.id}`)
-    })
+    if (workout.client.equals(req.user.profile._id)){
+      req.body.pump = !!req.body.pump
+      taco.updateOne(req.body)
+      .then(updatedWorkout => {
+        res.redirect(`/workouts/${workout._id}`)
+      })
+    } else {
+      throw new Error('NOT AUTHORIZED')
+    }
   })
   .catch(err => {
     console.log(err)
     res.redirect('/workouts')
   })
 }
-
 export {
   index,
   create,
   show,
-  flipPump,
-  edit
+  edit,
+  update
 }

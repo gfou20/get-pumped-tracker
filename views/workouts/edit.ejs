@@ -1,6 +1,34 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<h1>Hi</h1>
+<main>
+  <h1>Edit your Workout!</h1>
+  <form action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
+    <label>
+      Name:
+      <input 
+        type="text" 
+        name="name"
+        value="<%= workout.name %>"
+        autocomplete="off"
+      >
+    </label>
+    <label>
+      Pump:
+      <input 
+        type="checkbox" 
+        name="pump"
+        <%= workout.pump ? "checked" : "" %> 
+      >
+    </label>
+    <label for="sets">Sets:
+      <input type="text" name="sets">
+    </label>
+    <label for="reps">Reps:
+      <input type="text" name="reps">
+    </label>
+    <button type="submit">Save Changes</button>
+  </form>
+</main>
 
 <%- include('../partials/footer') %>

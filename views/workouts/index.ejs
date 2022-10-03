@@ -7,14 +7,7 @@
     <h2>Add New Workout!</h2>
     <form action="/workouts" method="POST">
     <label for="name-select">Name</label>
-    <select name="name" id="name-select">
-      <option value="Squats">Squats</option>
-      <option value="Bicep Curls">Bicep Curls</option>
-      <option value="Tricep Extensions">Tricep Extensions</option>
-      <option value="Deadlifts">Deadlifts</option>
-      <option value="Flat Bench Press">Flat Bench Press</option>
-      <option value="Running">Running</option>
-    </select>  
+    <input type="text" name="name" autocomplete="off">
     <label for="pump-checkbox">Pumped?</label>
     <input type="checkbox" name="pump">
     <label for="date">Date:</label>
