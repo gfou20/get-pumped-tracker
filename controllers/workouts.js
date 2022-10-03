@@ -62,7 +62,6 @@ function update(req, res) {
   Workout.findByIdAndUpdate(req.params.id, req.body, { new: true })
   .then(workout => {
     if (workout.client.equals(req.user.profile._id)){
-      req.body.pump = !!req.body.pump
       workout.updateOne(req.body)
       .then(updatedWorkout => {
         res.redirect(`/workouts/${workout._id}`)
