@@ -8,16 +8,14 @@
   <div><%= workout.sets %></div>
   <div><%= workout.reps %></div>
     
-  
-  
-</form>
   <% if (workout.client.equals(user?.profile._id)) { %>
     <a href="/workouts/<%= workout._id %>/edit">
       <button class="btn">Edit this Workout! 🏗💪</button>
     </a>
+    <form action="/workouts/<%= workout._id %>?_method=DELETE" method="POST">
+      <button>❌</button>
   <% } %>
-  <form action="/workouts/<%= workout._id %>?_method=DELETE" method="POST">
-    <button>X</button>
+  
 </main>
 
 <%- include('../partials/footer') %>
