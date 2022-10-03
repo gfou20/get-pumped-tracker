@@ -59,11 +59,11 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-  Workout.findById(req.params.id)
+  Workout.findByIdAndUpdate(req.params.id, req.body, { new: true })
   .then(workout => {
     if (workout.client.equals(req.user.profile._id)){
       req.body.pump = !!req.body.pump
-      taco.updateOne(req.body)
+      workout.updateOne(req.body)
       .then(updatedWorkout => {
         res.redirect(`/workouts/${workout._id}`)
       })
