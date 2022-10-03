@@ -50,7 +50,7 @@ function edit(req, res) {
   Workout.findById(req.params.id)
   .then(workout => {
     res.render('workouts/edit', {
-      taco,
+      workout,
       title: "Edit Workout"
     })
   })
