@@ -9,6 +9,8 @@ router.get('/', workoutsCtrl.index)
 
 router.get('/:id', workoutsCtrl.show)
 
+router.get('/:id/edit', isLoggedIn, workoutsCtrl.edit)
+
 router.post('/', workoutsCtrl.create)
 
 router.patch('/:id/flip-pump', isLoggedIn, workoutsCtrl.flipPump)

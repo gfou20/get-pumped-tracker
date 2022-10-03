@@ -46,6 +46,20 @@ function show(req, res) {
   })
 }
 
+function edit(req, res) {
+  Workout.findById(req.params.id)
+  .then(workout => {
+    res.render('workouts/edit', {
+      taco,
+      title: "Edit Workout"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/workouts')
+  })
+}
+
 function flipPump(req, res) {
   Workout.findById(req.params.id)
   .then(workout => {
@@ -65,5 +79,6 @@ export {
   index,
   create,
   show,
-  flipPump
+  flipPump,
+  edit
 }
