@@ -3,7 +3,26 @@
 
 <main>
   <h2>From the personal gym tracker of <%= workout.client ? workout.client.name : "😱"%></h2>
-  <p><%= workout.name %></p>
+  <div><%= workout.name %></div>
+  <div><%= workout.date %></div>
+  
+  <form
+    id="add-sets-reps-form"
+    action="/workouts/<%= workout._id %>/sets"
+    method="POST"
+  >
+    <label for="set-textarea">Set:</label>
+    <select name="sets" id="set-select">
+      <option value="1" selected>1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <label for="reps">Reps</label>
+    <input name="reps" type="text">
+    <button type="submit">Add Routine</button>
+  </form>
 </main>
 
 <%- include('../partials/footer') %>
