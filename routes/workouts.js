@@ -15,7 +15,7 @@ router.post('/', workoutsCtrl.create)
 
 router.put('/:id', isLoggedIn, workoutsCtrl.update)
 
-
+router.delete('/:id', isLoggedIn, workoutsCtrl.delete)
 export {
   router
 }

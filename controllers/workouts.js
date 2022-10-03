@@ -17,7 +17,6 @@ function index(req, res) {
 function create(req, res) {
   req.body.client = req.user.profile._id
   req.body.pump = !!req.body.pump
-  console.log(req.body)
   Workout.create(req.body)
   .then(workouts => {
     res.redirect('/workouts', {
@@ -34,7 +33,6 @@ function show(req, res) {
   Workout.findById(req.params.id)
   .populate('client')
   .then(workout => {
-    console.log(workout);
     res.render('workouts/show', {
       workout,
       title: "Workout show"
@@ -78,10 +76,29 @@ function update(req, res) {
     res.redirect('/workouts')
   })
 }
+
+function deleteWorkout(req, res) {
+  Workout.findById(req.params.id)
+  .then(workout => {
+    if (workout.client.equals(req.user.profile._id)){
+      workout.delete()
+      .then(deletedWorkout => {
+        res.redirect(`/workouts`)
+      })
+    } else {
+      throw new Error('NOT AUTHORIZED')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/workouts')
+  })
+}
 export {
   index,
   create,
   show,
   edit,
-  update
+  update,
+  deleteWorkout as delete
 }
