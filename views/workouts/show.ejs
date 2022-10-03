@@ -5,6 +5,7 @@
   <h2>Personal gym tracker of <%= workout.client ? workout.client.name : "😱"%></h2>
   <div><%= workout.name %></div>
   <div><%= workout.date %></div>
+  <div>You <%= workout.pump ? 'Got a Pump! 🔥💪' : 'did not get a Pump 😓' %></div>
   <div><%= workout.sets %></div>
   <div><%= workout.reps %></div>
     
