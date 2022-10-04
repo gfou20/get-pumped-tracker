@@ -2,12 +2,22 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h2>Personal gym tracker of <%= workout.client ? workout.client.name : "😱"%></h2>
+  <h2>Personal fitness tracker of <%= workout.client ? workout.client.name : "😱"%></h2>
   <div><%= workout.name %></div>
   <div><%= workout.date %></div>
-  <div>You <%= workout.pump ? 'Got a Pump! 🔥💪' : 'did not get a Pump 😓' %></div>
-  <div><%= workout.sets %></div>
-  <div><%= workout.reps %></div>
+  <div>You <%= workout.pump ? 'Got a Pump! 🔥💪' : 'did not get a Pump 😓' %>
+    <% if (user) { %>
+      <form 
+      action="/workouts/<%= workout._id %>/swap-pump?_method=PATCH"
+      method="POST"
+    >
+      <button type="submit">
+        Change <%= workout.pump ? 'did not get a Pump 😓' : 'Got a Pump! 🔥💪' %> 
+      </button>
+    </form>
+    <% } %>
+  </div>
+  <div><%= workout.setRep %></div>
     
   <% if (workout.client.equals(user?.profile._id)) { %>
     <a href="/workouts/<%= workout._id %>/edit">

@@ -10,9 +10,10 @@ html {
 
 body {
   background-color: white;
-  background-image: url("https://wallpaperaccess.com/full/188566.jpg");
-  background-size: 1200px;
-  color: #CE2D4F;
+  background-image: url("https://wallpaperaccess.com/full/4268425.jpg");
+  background-size: 100%;
+  color: red;
+  font-weight: bold;
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
   margin: 0;
