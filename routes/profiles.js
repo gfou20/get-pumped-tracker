@@ -8,6 +8,8 @@ router.get('/', profilesCtrl.index)
 
 router.get('/:id', profilesCtrl.show)
 
+router.post('/:id/goals', isLoggedIn, profilesCtrl.setGoal)
+
 export {
   router
 }
