@@ -10,6 +10,8 @@ router.get('/:id', profilesCtrl.show)
 
 router.post('/:id/goals', isLoggedIn, profilesCtrl.setGoal)
 
+router.delete('/goals/:id', isLoggedIn, profilesCtrl.deleteGoal)
+
 export {
   router
 }

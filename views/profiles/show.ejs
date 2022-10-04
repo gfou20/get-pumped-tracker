@@ -11,9 +11,9 @@
     >
   </div>
   <h1>Look at <%= isSelf ? "you" : profile.name %>!</h1>
-  <h2>Set a Goal and stick with it!</h2>
+  <h2><%= profile.name %>'s Goals!</h2>
   <% if (isSelf) { %>
-    <h2>Add a Goal! Keep motivated</h2>
+    <h2>Add a Goal! Keep motivated!</h2>
     <form action="/profiles/<%= profile._id %>/goals" method="POST">
       <label>
         Goal:
@@ -25,6 +25,19 @@
       </label>
       <button type="submit">Add Goal</button>
     </form>
+  <% } %>
+  <% if (profile.goals.length) { %>
+    <h2>
+      <%= isSelf ? 'You have' : `${profile.name} has` %> some goals to work on! Take a look!
+    </h2>
+    <% profile.goals.forEach(goal => { %>
+      <h3>
+        <%= goal.exerGoal %> should be completed by <%= goal.time %>
+        <% if (isSelf) { %>
+          
+        <% } %>
+      </h3>
+    <5 }) %> 
   <% } %>
   
 </main>
