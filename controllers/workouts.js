@@ -18,9 +18,15 @@ function create(req, res) {
   req.body.client = req.user.profile._id
   req.body.pump = !!req.body.pump
   Workout.create(req.body)
-  .then(workouts => {
-    res.redirect('/workouts', {
-      workouts
+  .then(workout => {
+    workout.setRep.push(req.body)
+    workout.save()
+    .then(() => {
+      res.redirect('/workouts')
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/workouts')
     })
   })
   .catch(err => {
