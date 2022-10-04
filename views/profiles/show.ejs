@@ -10,6 +10,23 @@
       alt="<%= profile.name %>'s avatar"
     >
   </div>
+  <h1>Look at <%= isSelf ? "you" : profile.name %>!</h1>
+  <h2>Set a Goal and stick with it!</h2>
+  <% if (isSelf) { %>
+    <h2>Add a Goal! Keep motivated</h2>
+    <form action="/profiles/<%= profile._id %>/goals" method="POST">
+      <label>
+        Goal:
+        <input type="text" name="exerGoal" autocomplete="off">
+      </label>
+      <label>
+        Complete by:
+        <input type="datetime-local" name="time">
+      </label>
+      <button type="submit">Add Goal</button>
+    </form>
+  <% } %>
+  
 </main>
 
 <%- include('../partials/footer') %>
