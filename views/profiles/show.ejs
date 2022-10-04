@@ -28,16 +28,26 @@
   <% } %>
   <% if (profile.goals.length) { %>
     <h2>
-      <%= isSelf ? 'You have' : `${profile.name} has` %> some goals to work on! Take a look!
+      <%= isSelf ? "You have" : `${profile.name} has` %> some goals set! Take a look 👀! 
     </h2>
     <% profile.goals.forEach(goal => { %>
       <h3>
-        <%= goal.exerGoal %> should be completed by <%= goal.time %>
+        <%= goal.exerGoal %> to be completed by <%= goal.time %>.   
         <% if (isSelf) { %>
-          
+          <form 
+            action="/profiles/goals/<%= goal._id %>?_method=DELETE"
+            method="POST"
+            style="display: inline-block;"
+          >
+            <button type="submit">Remove Goal? ❌ <%= goal.exerGoal %></button>
+          </form>
         <% } %>
       </h3>
-    <5 }) %> 
+    <% }) %>
+  <% } else { %>
+    <h2>
+      <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any current goals set! 
+    </h2>
   <% } %>
   
 </main>
