@@ -13,7 +13,7 @@ const profileSchema = new Schema({
   name: String,
   avatar: String,
   goals: [goalSchema],
-  quote: { type: Schema.Types.ObjectId, ref: "Quote" }
+  quote: { type: Schema.Types.ObjectId, ref: "Quote" },
 }, {
   timestamps: true
 })

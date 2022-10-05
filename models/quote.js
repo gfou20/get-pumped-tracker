@@ -8,7 +8,7 @@ const quoteSchema = new Schema({
   timestamps: true
 })
 
-const Quote = mongoose.model('Quote', quoteSchema)
+const Quote = mongoose.model("Quote", quoteSchema)
 
 export {
   Quote
