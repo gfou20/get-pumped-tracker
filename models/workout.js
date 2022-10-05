@@ -18,7 +18,8 @@ const workoutSchema = new Schema({
   pump: Boolean,
   date: Date,
   setRep: [setSchema],
-  client: { type: Schema.Types.ObjectId, ref: "Profile" }
+  client: { type: Schema.Types.ObjectId, ref: "Profile" },
+  quote: { type: Schema.Types.ObjectId, ref: "Quote" }
 }, {
   timestamps: true
 })
