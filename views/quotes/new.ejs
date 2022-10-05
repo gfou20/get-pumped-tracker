@@ -1,0 +1,21 @@
+<%- include('../partials/html-head') %>
+
+<%- include('../partials/nav') %>
+
+<main>
+	<h1><%= title %></h1>
+  <p>Please first ensure that the Performer is not in the dropdown
+    <select>
+      <% quotes.forEach(function(quote) { %>
+        <option><%= quote.content %></option>
+      <% }) %>
+    </select>
+  </p>
+  <form id="add-quote-form" action="/quotes" method="POST">
+    <label for="content-input">Quote:</label>
+    <input type="text" name="content" id="content-input">
+    <button type="submit">Add Quote</button>
+  </form>
+</main>
+
+<%- include('../partials/footer') %>
