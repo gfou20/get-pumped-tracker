@@ -11,7 +11,7 @@ html {
 body {
   background-color: white;
   background-image: url("https://wallpaperaccess.com/full/4268425.jpg");
-  background-size: 100%;
+  background-repeat: none;
   color: red;
   font-weight: bold;
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
