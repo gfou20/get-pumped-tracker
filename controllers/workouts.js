@@ -36,6 +36,26 @@ function create(req, res) {
   })
 }
 
+function createSetRep(req, res) {
+  Workout.findById(req.params.id)
+  .then(workout => {
+    workout.setRep.push(req.body)
+    workout.save()
+    .then(() => {
+      res.redirect(`/workouts/${workout._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
+
 function show(req, res) {
   Workout.findById(req.params.id)
   .populate('client')
@@ -81,11 +101,11 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-  Workout.findById(req.params.id)
+  Workout.findByIdAndUpdate(req.params.id)
   .then(workout => {
     if (workout.owner.equals(req.user.profile._id)){
       req.body.pump = !!req.body.pump
-      workout.updateOne(req.body)
+      workout.update(req.body)
       .then(updatedWorkout => {
         res.redirect(`/workouts/${workout._id}`)
       })
@@ -119,6 +139,7 @@ function deleteWorkout(req, res) {
 export {
   index,
   create,
+  createSetRep,
   show,
   edit,
   swapPump,

@@ -13,6 +13,8 @@ router.get('/:id/edit', isLoggedIn, workoutsCtrl.edit)
 
 router.post('/', workoutsCtrl.create)
 
+router.post('/:id/setRep', workoutsCtrl.createSetRep)
+
 router.patch('/:id/swap-pump', isLoggedIn, workoutsCtrl.swapPump)
 
 router.put('/:id', isLoggedIn, workoutsCtrl.update)
