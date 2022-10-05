@@ -2,6 +2,7 @@ import { Workout } from '../models/workout.js'
 
 function index(req, res) {
   Workout.find({})
+  .populate('client')
   .then(workouts => {
     res.render('workouts/index', {
       workouts,
