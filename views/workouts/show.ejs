@@ -33,10 +33,10 @@
   
   <% if (workout.setRep.length) { %>
     <label>
-      Sets: <%= workout.setRep[0].sets %>
+      Sets: <%= workout.setRep[workout.setRep.length -1].sets %>
     </label>
     <label>
-      Reps: <%= workout.setRep[0].reps %>
+      Reps: <%= workout.setRep[workout.setRep.length -1].reps %>
     </label>
     <% } else { %>
       <h3>Record how many Sets/Reps you did!</h3>

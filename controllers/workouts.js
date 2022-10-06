@@ -103,7 +103,7 @@ function edit(req, res) {
 function update(req, res) {
   Workout.findByIdAndUpdate(req.params.id)
   .then(workout => {
-    if (workout.owner.equals(req.user.profile._id)){
+    if (workout.client.equals(req.user.profile._id)){
       req.body.pump = !!req.body.pump
       workout.update(req.body)
       .then(updatedWorkout => {
