@@ -58,5 +58,9 @@ Hope you Enjoy!
 
 -Background from [wallpaperaccess.com](https://wallpaperaccess.com/)
 
+## Icebox Items
 
-
+- [ ] Mobile Friendly
+- [ ] Add more workout routine options
+- [ ] Like someone's workout
+- [ ] Keep track of of a friend's workout routine
