@@ -19,9 +19,6 @@ Enjoy!
 
 - The Workout page is all about feeling the burn! As a 
   
-- Each question is worth 1 point
-  
-- If time runs out, its Game Over!
 
 ## Technologies Used 
 
@@ -29,24 +26,3 @@ Enjoy!
 
 -CSS
 
--Javascript
-
--[Whimsical](https://whimsical.com/getting-started-boards-QqL4VfuNCsszsBUCWumEn1)
-
-## Thanks to
-
--Background image from [freepik](https://www.freepik.com/free-photos-vectors/cartoon-background)
-
--Font style from [Google Fonts](https://fonts.google.com/specimen/Press+Start+2P)
-
--Sound effects from [MyInstants](https://www.myinstants.com/en/index/us/)
-
-## Coming Soon
-
-90s-Cartoon-Quiz-Game will be updated to include:
-
--New cartoon quizes to choose from
-
--More images and audio to bring back some 90s nostaligia
-
--Mobile version on the way!
