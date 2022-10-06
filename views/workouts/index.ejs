@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>Feel the 🔥</h1>
+  <h1 id="no-underline">Feel the 🔥</h1>
   <img src="/assets/chance-funny.webp" alt="man dancing with weights">
   <% if (user) { %>
     <h2>Add New Workout!</h2>
@@ -21,7 +21,7 @@
     <% workouts.forEach(workout => { %>
       <li>
         💪 
-        <a href="/workouts/<%= workout._id %>"><%= workout.name %></a>
+        <a href="/workouts/<%= workout._id %>" id="work-list"><%= workout.name %></a>
         got <%= workout.client.name %> <%=  workout.pump ? 'pumped!' : 'not pumped!' %></li>
     <% }) %>
   </ul>

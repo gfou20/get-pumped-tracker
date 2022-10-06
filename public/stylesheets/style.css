@@ -1,9 +1,10 @@
+/* Main Index */
+
 html {
   box-sizing: border-box;
 }
 
-
-*::before, 
+*::before,
 *::after {
   box-sizing: inherit;
 }
@@ -12,19 +13,11 @@ body {
   background-color: white;
   background-image: url("https://wallpaperaccess.com/full/4268425.jpg");
   background-repeat: none;
-  color: red;
+  background-size: cover;
+  color: rgb(6, 101, 226);
   font-weight: bold;
-  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
-    'Helvetica Neue', sans-serif;
+  font-family: "Cairo", sans-serif;
   margin: 0;
-}
-
-nav {
-  background-color: #f6f6f6;
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  min-height: 60px;
 }
 
 main {
@@ -32,19 +25,68 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: 80px 200px 0 200px;
+  padding: 50px 150px;
+  padding-bottom: 60px;
+  background: rgba(235, 253, 254, 0.7);
+  text-align: center;
 }
+
+h1,
+h2 {
+  font-family: "Silkscreen", cursive;
+  text-decoration: underline;
+}
+
+/* Nav */
+
+nav {
+  background: rgba(235, 253, 254, 0.7);
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  min-height: 60px;
+  margin: 20px 200px 0px 200px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(6, 101, 226);
+  padding: 0 20px;
+}
+
+a:hover {
+  color: white;
+  background-color: rgb(214, 213, 213);
+  border-radius: 5px;
+}
+
+/* .right:not(:hover){
+  border-radius: none;
+} */
 
 .right {
   margin-left: auto;
 }
 
-a {
+/* Workout */
+
+#no-underline{
   text-decoration: none;
-  color: blue;
 }
 
-a:hover {
-  color: white;
-  background-color: blue;
-  border-radius: 5px;
+li{
+  list-style: none;
+  text-align: left;
+}
+
+#work-list{
+  text-decoration: underline;
+  color: blueviolet;
+}
+
+/* Quotes */
+
+h3 {
+  font-family: "Silkscreen", cursive;
 }
