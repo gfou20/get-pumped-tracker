@@ -35,7 +35,6 @@ main {
 h1,
 h2 {
   font-family: "Silkscreen", cursive;
-  text-decoration: underline;
 }
 
 /* Nav */
@@ -61,10 +60,6 @@ a:hover {
   border-radius: 5px;
 }
 
-/* .right:not(:hover){
-  border-radius: none;
-} */
-
 .right {
   margin-left: auto;
 }
@@ -81,7 +76,6 @@ li{
 }
 
 #work-list{
-  text-decoration: underline;
   color: blueviolet;
 }
 
