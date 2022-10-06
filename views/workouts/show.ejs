@@ -5,8 +5,8 @@
   <h2>Personal fitness tracker of <%= workout.client ? workout.client.name : "😱"%></h2>
   <div><%= workout.name %></div>
   <div><%= workout.date %></div>
-  <div>You <%= workout.pump ? 'Got a Pump! 🔥💪' : 'did not get a Pump 😓' %>
-    <% if (user) { %>
+  <div><%= workout.client.name %> <%= workout.pump ? 'Got a Pump! 🔥💪' : 'did not get a Pump 😓' %>
+    <% if (workout.client.equals(user?.profile._id)) { %>
       <form 
       action="/workouts/<%= workout._id %>/swap-pump?_method=PATCH"
       method="POST"
@@ -15,9 +15,7 @@
         Change <%= workout.pump ? 'did not get a Pump 😓' : 'Got a Pump! 🔥💪' %> 
       </button>
     </form>
-    <% } %>
-  </div>
-  <form 
+    <form 
     id="add-sets-reps-form"
     action="/workouts/<%= workout._id %>/setRep"
     method="POST"
@@ -30,6 +28,8 @@
   </label>
     <button type="submit">Add Sets/Reps</button>
   </form>
+    <% } %>
+  </div>
   
   <% if (workout.setRep.length) { %>
     <label>
