@@ -1,22 +1,23 @@
 # Get Pumped Tracker
 
-![Alt text](./public/assets/get-pumped-tracker-main.png)
+![Alt text](./public/assets/get-pumped-tracker-index.png)
+![Alt text](./public/assets/get-pumped-tracker-profile.png)
+![Alt text](./public/assets/get-pumped-tracker-quote.png)
+![Alt text](./public/assets/get-pumped-tracker-workout.png)
 
 ## About
 
-I loved watching cartoons as a kid and some shows have stuck with me throughout my life. These are just a few I enjoyed watching. 
+Whenever I would feel lost or exhausted with the cards life has been dealing me, I found exercise to be my escape. Being able to put all of your emotions into a solid workout has always left me feeling relaxed, more energized and most importantly, accomplished! Seeing how much more you can do everyday pushes me to go further and maybe this can help you go beyond your limits too! 
 
-The 90s Cartoon Quiz Game is a fun quiz testing the players knowledge on some popular 90s cartoons. The player will have 25 secs to answer all 8 questions within the selected category. If time runs out, the game is over! See if you can get a perfect score!
-
-Here is a link to my [90s Cartoon Quiz Game!](https://90s-cartoon-quiz.netlify.app/)
+Here is a link to my [Get Pumped Tracker!](https://get-pumped-tracker.fly.dev)
 
 Enjoy!
 
-## Rules
+## Pages
 
-- Select a category to start the quiz
+- Main Index page gives a brief explanation of why I decided to make this application.
 
-- Answer all 8 questions to find out your score
+- The Workout page is all about feeling the burn! As a 
   
 - Each question is worth 1 point
   
