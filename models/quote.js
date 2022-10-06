@@ -4,6 +4,7 @@ const Schema = mongoose.Schema
 
 const quoteSchema = new Schema({
   content: { type: String},
+  quoter: { type: Schema.Types.ObjectId, ref: "Profile" },
 }, {
   timestamps: true
 })

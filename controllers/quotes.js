@@ -14,18 +14,18 @@ function index(req, res) {
   })
 }
 
-// function create(req, res) {
-//   Quote.create(req.body)
-//   .then(quote => {
-//     res.redirect('/quotes/new')
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect('/quotes/new')
-//   })
-// }
+function create(req, res) {
+  Quote.create(req.body)
+  .then(quote => {
+    res.redirect('/quotes')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/quotes')
+  })
+}
 
 export {
   index,
-  // create,
+  create,
 }
