@@ -28,9 +28,6 @@
   </label>
     <button type="submit">Add Sets/Reps</button>
   </form>
-    <% } %>
-  </div>
-  
   <% if (workout.setRep.length) { %>
     <label>
       Sets: <%= workout.setRep[workout.setRep.length -1].sets %>
@@ -41,8 +38,9 @@
     <% } else { %>
       <h3>Record how many Sets/Reps you did!</h3>
     <% } %>
-
-
+    <% } %>
+  </div>
+  
   <% if (workout.client.equals(user?.profile._id)) { %>
     <a href="/workouts/<%= workout._id %>/edit">
       <button class="btn">Edit this Workout! 🏗💪</button>
