@@ -11,7 +11,6 @@
     >
   </div>
   <h1>Look at <%= isSelf ? "you" : profile.name %>!</h1>
-  <h2><%= profile.name %>'s Goals!</h2>
   <% if (isSelf) { %>
     <h2>Add a Goal! Keep motivated!</h2>
     <form action="/profiles/<%= profile._id %>/goals" method="POST">
